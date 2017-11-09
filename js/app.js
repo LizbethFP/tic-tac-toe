@@ -11,18 +11,29 @@ function winner() {
 
 }
 
-function ticTacToe() {
-  alert("Funciona tic tac toe!")
+function ticTacToe(event) {
+  // alert("¡Funciona!")
+  // alert(event.target.id);
+  var cell = event.target;
+  var idCell = event.target.id;
+
+  var marked = idCell[1];
+
 }
 
-function loadDocuent() {
-  document.getElementsByClassName("ticTacToe")[4].addEventListener("click", ticTacToe);
+function loadDocument() {
+  var count = 0;
+  while(count<cells.length) {
+    cells[count].addEventListener("click", ticTacToe);
+    count++;
+    console.log(count,cells[count]);
+  }
 }
 
 
 
 //Asignación de eventos
-window.addEventListener("load", loadDocuent);
+window.addEventListener("load", loadDocument);
 
 
 
